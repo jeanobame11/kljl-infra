@@ -4,6 +4,7 @@ resource "aws_instance" "db_tester" {
   subnet_id              = aws_subnet.public_a.id
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   key_name               = "kljl-key" 
+  associate_public_ip_address = true
 
   user_data = <<-EOF
               #!/bin/bash
